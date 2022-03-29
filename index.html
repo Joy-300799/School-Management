@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/DOM & Event/School Management/style.css" />
+    <title>School Management</title>
+</head>
+
+<br>
+<header>
+    <img class="school-image" src="/DOM & Event/School Management/images/omnicell-image.jpeg" alt="OMNICELL">
+    <a href="#" class="logo">Learning School</a>
+
+    <!-- <input type="checkbox" id="menu-bar">
+        <label for="menu-bar">Menu</label> -->
+
+    <!-- Navigation menu -->
+    <nav class="navbar">
+        <ul>
+            <li><a class="home-btn" href="#">Home</a></li>
+            <li><a class="about-btn" href="#">About Us</a></li>
+            <li><a href="#">Academics ▾</a>
+                <ul>
+                    <li><a class="student-list" href="#">Students</a></li>
+                    <li><a class="teacher-list" href="#">Teachers</a></li>
+                    <li><a class="schedule-main-button" href="#">Schedules ▸</a>
+                        <ul>
+                            <li><a class="schedule-create" href="#">Create</a></li>
+                            <li><a class="schedule-view" href="#">View
+                                </a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            </li>
+            <li><a href="#">Reviews</a></li>
+            <li><a href="#">Admissions ▾</a>
+                <ul>
+                    <li><a class="enroll-student" href="#">Enroll as Student</a></li>
+                    <li><a class="hire-faculty" href="#">Apply as Faculty</a></li>
+                </ul>
+            </li>
+            <li><a class="contact-btn" href="#">Contact Us</a></li>
+        </ul>
+
+    </nav>
+</header>
+
+<!-- Student Enrollment Form -->
+<div class="enrollment-form-container hidden">
+    <div class="enrollment-form-title">Enrollment Form </div>
+    <button class="close-enrollment-form">&times;</button>
+    </br>
+    <form onsubmit="addStudentDetails()">
+        <div class="user-details">
+            <div class="input-box">
+                <span class="details">Full Name</span>
+                <input id="student-full-name" type="text" placeholder="Enter your full name" required>
+            </div>
+            <div class="input-box">
+                <span class="details">Class</span>
+                <input id="student-class" type="number" placeholder="Enter class" required>
+            </div>
+            <div class="input-box">
+                <span class="details">Date Of Birth</span>
+                <input id="student-dob" type="text" placeholder="DD-MM-YYYY" required>
+            </div>
+            <div class="input-box">
+                <span class="details">Email-Id</span>
+                <input id="student-email" type="text" placeholder="xyz@gmail.com" required>
+            </div>
+            <div class="input-box">
+                <span class="details">Phone</span>
+                <input id="student-phone" type="number" placeholder="Enter your phone number" required>
+            </div>
+        </div>
+        <div class="gender-details">
+            <span class="gender-title">Gender</span>
+            </br>
+            <input type="radio" name="student-gender" id="dot-1" value="Male" /> Male
+            <input type="radio" name="student-gender" id="dot-2" value="Female" /> Female
+            <input type="radio" name="student-gender" id="dot-3" value="Others" /> Others
+
+            <div class="enroll-success-button">
+                <input type="submit" value="Enroll">
+            </div>
+    </form>
+</div>
+
+</div>
+<div class-="student-error-container">
+    <span id="student-error-message"></span>
+</div>
+
+<!-- Faculty Hiring form -->
+<div class="faculty-container hidden">
+    <div class="faculty-form-title">Faculty Form </div>
+    <button class="close-faculty-form">&times;</button>
+    </br>
+    <form onsubmit="addTeachers()">
+        <div class="user-details">
+            <div class="input-box">
+                <span class="details">Full Name</span>
+                <input id="teacher-fullname" type="text" placeholder="Enter your full name" required>
+            </div>
+            <div class="input-box">
+                <span class="details">Subject</span>
+                <input id="teacher-subject" type="text" placeholder="Enter subject" required>
+            </div>
+            <div class="input-box">
+                <span class="details">Experience</span>
+                <input id="teacher-exp" type="number" placeholder="Enter your experience in years" required>
+            </div>
+            <div class="input-box">
+                <span class="details">Email-Id</span>
+                <input id="teacher-email" type="text" placeholder="Enter your email" required>
+            </div>
+            <div class="input-box">
+                <span class="details">Phone</span>
+                <input id="teacher-phone" type="number" placeholder="Enter your phone number" required>
+            </div>
+        </div>
+        <div class="gender-details">
+            <span class="gender-title">Gender</span>
+            </br>
+            <input type="radio" name="teacher-gender" id="dot-4" value="Male" /> Male
+            <input type="radio" name="teacher-gender" id="dot-5" value="Female" /> Female
+            <input type="radio" name="teacher-gender" id="dot-6" value="Others" /> Others
+
+        </div>
+        <div class="button">
+            <input type="submit" value="Apply">
+        </div>
+    </form>
+</div>
+
+<!-- Schedule form -->
+<div class="schedule hidden">
+    <div class="schedule-form-title">Weekly schedule - Class <span id="class-number"></span></div>
+    <button class="close-schedule-form">&times;</button>
+    <div>Enter subject names by comma separated corresponding to the week days.</div>
+    </br>
+    <form onsubmit="addSchedule()">
+        <div class="schedule-details">
+            <div class="input-box">
+                <span class="details">Monday</span>
+                <input id="monday" type="text" placeholder="Enter subjects" required>
+            </div>
+            <div class="input-box">
+                <span class="details">Tuesday</span>
+                <input id="tuesday" type="text" placeholder="Enter subjects" required>
+            </div>
+            <div class="input-box">
+                <span class="details">Wednesday</span>
+                <input id="wednesday" type="text" placeholder="Enter subjects" required>
+            </div>
+            <div class="input-box">
+                <span class="details">Thursday</span>
+                <input id="thursday" type="text" placeholder="Enter subjects" required>
+            </div>
+            <div class="input-box">
+                <span class="details">Friday</span>
+                <input id="friday" type="text" placeholder="Enter subjects" required>
+            </div>
+        </div>
+
+        <div class="button">
+            <input type="submit" value="Create">
+        </div>
+    </form>
+</div>
+</div>
+
+<!-- Home page -->
+<img class="principal" src="/DOM & Event/School Management/images/ved-modified.png" alt="principal">
+<p id="principal-name">Mr. Ved Singh</p>
+</br>
+<span id="designation">Principal, Omnicell Learning school</span>
+<div class="principal-speech">
+    <h3>WE ENSURE A BETTER EDUCATION</br> FOR A BETTER WORLD</h3>
+    <p id="para" style="font-size:15px;text-align:justify">Learn how a powerful combination of hardware, software, and
+        tech-enabled services is transforming </br>the pharmacy care delivery model. Explore a variety of informative
+        materials to inspire your journey to an autonomous pharmacy.</br>
+        Explore how automation, intelligence, and
+        technology-enabled solutions, powered by a cloud data platform,</br> are leading the way to zero-error medication
+        management.
+    </p>
+</div>
+
+<!-- student list table -->
+<div class="st-table-div hidden">
+    <h3 id="st-heading">Students List 👨🏻‍🎓</br></h3>
+    <button class="close-st">&times;</button>
+</br>
+<table class="st hidden">
+    <thead>
+        <th>Name</th>
+        <th>Unique ID</th>
+        <th>DOB</th>
+        <th>Gender</th>
+        <th>Phone Number</th>
+        <th>Email</th>
+    </thead>
+
+    <tbody class="student-table">
+
+    </tbody>
+
+</table>
+</div>
+
+<!-- teacher table -->
+<div class="th-table-div hidden">
+    <h3 id="th-heading">Teachers List 🧑🏻‍🏫</br></h3>
+    <button class="close-th">&times;</button>
+</br>
+<table class="th hidden">
+        <thead>
+            <th>Name</th>
+            <th>Unique ID</th>
+            <th>Subject</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+            <th>Experience</th>
+            <th>Gender</th>
+        </thead>
+
+        <tbody class="teacher-table">
+            
+        </tbody>
+    </table>
+</div>
+
+<!-- schedule-table -->
+<div class="sch-table-div hidden">
+    <h3 id="sch-heading">Weekly Schedule 🗓</br></h3>
+    <button class="close-sch">&times;</button>
+</br>
+    <table class="schedule-table" >
+        <thead>
+            <th>Days</th>
+            <th>1st</th>
+            <th>2nd</th>
+            <th>3rd</th>
+            <th>4th</th>
+        </thead>
+    
+        <tbody class="time-table">
+    
+        </tbody>
+    </table>
+</div>
+
+    <div class="about hidden">
+        <h2>ABOUT US 🚀</h2>
+        <button class="close-about">&times;</button>
+    </br>
+        <h3>
+            Our Vision: 
+        </h3>
+        <p>To deliver the most compelling automation and services that accelerate pharmacy perfection. This is the vision of the autonomous pharmacy. A zero-error, fully automated, digital, medication and supply management delivery infrastructure designed to address clinical, operational, compliance and population health care challenges. A fully autonomous pharmacy helps to safely and securely deliver the right dose, to the right patient, at the right time, anywhere across the continuum of care.</p>
+    </br>
+    <h3>
+        Our Core Values:
+    </h3>
+    <p>Our Core Values represent what we stand for as a company and provide guidance for how we do business, both internally and externally. Focusing on our customers is a critical component across all of our Core Values.</br>(i).Passionate Transformer, 
+        (ii).Relationships Matter, 
+        (iii).Intellectually Curious, 
+        (iv).Mission Driven, 
+        (v).Entrepreneurial, 
+        (vi).Do the Right Thing.
+    </p>
+</br>
+    <h3>Our key Pillars of Quality Commitment:</h3>
+    <p>1. Customer Requirements </br>
+        2. Customer Experience </br>
+        3. Continual improvement </br>
+        4. Conformance
+    </p>
+    </div>
+
+    <div id="excell-note">
+<p><i>As a school community, we help our scholars explore these pathways in </br>their courses. At every grade level, we challenge our excellent </br>leaders-in-the-making to think critically and to </br>express themselves creatively in math, science,</br> the humanities, physical education, language, culture,</br> the arts and through our high school work-study program.</i></p>
+    </div>
+    <h2 class="exc-heading">Our Excellence</h2>
+    <img id="img-damodar" src="/DOM & Event/School Management/images/damodar.png">
+    <img id="img-anup" src="/DOM & Event/School Management/images/anup.png">
+    <img id="img-swati" src="/DOM & Event/School Management/images/swati.png">
+    <img id="img-alka" src="/DOM & Event/School Management/images/alka.png">
+    <img id="img-vishwa" src="/DOM & Event/School Management/images/vishwa.png">
+
+    <div class="contact hidden">
+        <button class="close-con">&times;</button>
+    </br>
+        <form action="#">
+      
+          <label for="fname">First Name</label>
+          <input type="text" id="fname" name="firstname" placeholder="Your name..">
+      
+          <label for="lname">Last Name</label>
+          <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+      
+          <label for="Issue">Issue</label>
+          <select id="issue" name="country">
+            <option value="enroll">Unable to enroll</option>
+            <option value="studentList">Unable to get students list</option>
+            <option value="teacherList">Unable to get teachers list</option>
+            <option value="other">Other</option>
+
+          </select>
+      
+          <label for="subject">Subject</label>
+          <textarea id="subject" name="subject" placeholder="Write something.." style="height:100px"></textarea>
+      
+          <input type="submit" value="Submit">
+      
+        </form>
+      </div>
+<div class="overlay hidden"></div>
+<script src="/DOM & Event/School Management/script.js"></script>
+</body>
+
+</html>

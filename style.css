@@ -1,0 +1,612 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "poppins", sans-serif;
+  text-decoration: none;
+}
+
+body {
+  background: rgb(255, 255, 255);
+  min-height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url(schoolBg1.jpg);
+  background-position: center;
+  background-size: 1470px 850px;
+  background-repeat: no-repeat;
+}
+
+header .school-image {
+  width: 90px;
+  height: 70px;
+  margin-right: 20px;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #feffff;
+  padding: 0px 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
+}
+
+header .logo {
+  font-weight: bolder;
+  font-size: 19px;
+  font-family: sans-serif;
+  color: rgb(100, 175, 100);
+  margin-right: 200px;
+  position: absolute;
+  left: 195px;
+}
+
+header .navbar ul {
+  list-style: none;
+  /* display: flex; */
+}
+
+header .navbar ul li {
+  position: relative;
+  margin-right: 10px;
+  float: left;
+}
+
+header .navbar ul li a {
+  font-size: 18px;
+  padding: 10px;
+  color: #333;
+  display: block;
+}
+
+header .navbar ul li a:hover {
+  background: linear-gradient(135deg, #7e868b, #f1fffe);
+  color: rgb(255, 255, 255);
+}
+
+header .navbar ul li ul {
+  position: absolute;
+  left: 0;
+  width: 180px;
+  background: #fff;
+  display: none;
+}
+
+header .navbar ul li ul li {
+  width: 100%;
+  border-top: 1px solid #000;
+}
+
+header .navbar ul li:hover > ul {
+  display: initial;
+}
+
+header .navbar ul li ul li:hover > ul {
+  display: initial;
+}
+
+header .navbar ul li ul li ul {
+  position: absolute;
+  margin-left: 180px;
+  margin-top: -48.5px;
+}
+
+header .navbar ul li ul li a:hover {
+  background: linear-gradient(135deg, #7e868b, #f1fffe);
+  color: rgb(255, 255, 255);
+}
+
+.hidden {
+  display: none;
+}
+
+.enrollment-form-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 400px;
+  height: 560px;
+  width: 100%;
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+  padding: 25px 30px;
+  border-radius: 5px;
+  z-index: 10;
+}
+
+
+.enrollment-form-title {
+  font-size: 25px;
+  font-weight: 500;
+  position: relative;
+}
+
+.enrollment-form-title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 30px;
+  background: linear-gradient(135deg, rgb(245, 245, 245), rgb(29, 240, 194));
+}
+
+.user-details .input-box .details {
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.user-details .input-box input {
+  height: 40px;
+  width: 100%;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid rgb(255, 255, 255);
+  padding-left: 15px;
+  font-size: 16px;
+}
+
+.user-details .input-box input:focus,
+.user-details .input-box input:valid {
+  border-color: #9b59b6;
+}
+
+form .gender-details .gender-title {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+form .gender-details .category {
+  display: flex;
+  width: 80%;
+  margin-top: 10px;
+  justify-content: space-between;
+}
+
+form .gender-details .category label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+form .gender-details .category .dot {
+  height: 20px;
+  width: 20px;
+  background: #d9d9d9;
+  border-radius: 50%;
+  margin-right: 10px;
+  border: 5px solid transparent;
+  cursor: pointer;
+}
+
+#dot-1,
+#dot-2,
+#dot-3 {
+  cursor: pointer;
+}
+
+#dot-2,
+#dot-3 {
+  margin-left: 20px;
+}
+
+form .enroll-success-button {
+  height: 45px;
+  margin: 10px 0;
+}
+
+form .enroll-success-button input {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  color: rgb(0, 0, 0);
+  border: none;
+  font-size: 18px;
+  font-weight: 500px;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  background: linear-gradient(135deg, #d3dde4, #59b6b1);
+}
+
+form .enroll-success-button input:hover {
+  background: linear-gradient(135deg, #7e868b, #f1fffe);
+  color: #fff;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* background-color: rgba(0, 0, 0, 0.76); */
+  backdrop-filter: blur(4px);
+  z-index: 5;
+}
+
+/* faculty hiring styling */
+.faculty-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 400px;
+  height: 560px;
+  width: 100%;
+  background: linear-gradient(135deg, #2d75d4, #d39b6d);
+  padding: 25px 30px;
+  border-radius: 5px;
+  z-index: 10;
+}
+
+.faculty-form-title {
+  font-size: 25px;
+  font-weight: 500;
+  position: relative;
+}
+
+.faculty-form-title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 30px;
+  background: linear-gradient(135deg, rgb(245, 245, 245), rgb(29, 240, 194));
+}
+
+.user-details .input-box .details {
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.user-details .input-box input {
+  height: 40px;
+  width: 100%;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding-left: 15px;
+  font-size: 16px;
+}
+
+.user-details .input-box input:focus,
+.user-details .input-box input:valid {
+  border-color: #9b59b6;
+}
+
+form .gender-details .gender-title {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+form .gender-details .category {
+  display: flex;
+  width: 80%;
+  margin-top: 10px;
+
+  justify-content: space-between;
+}
+
+form .gender-details .category label {
+  display: flex;
+  align-items: center;
+}
+
+form .gender-details .category .dot {
+  height: 18px;
+  width: 18px;
+  background: #d9d9d9;
+  border-radius: 50%;
+  margin-right: 10px;
+  border: 5px solid transparent;
+}
+
+#dot-4,
+#dot-5,
+#dot-6 {
+  cursor: pointer;
+}
+
+#dot-5,
+#dot-6 {
+  margin-left: 20px;
+}
+
+form .button {
+  height: 45px;
+  margin: 10px 0;
+}
+
+form .button input {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  color: rgb(0, 0, 0);
+  border: none;
+  font-size: 18px;
+  font-weight: 500px;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  background: linear-gradient(135deg, #d3dde4, #59b6b1);
+}
+
+form .button input:hover {
+  background: linear-gradient(135deg, #7e868b, #f1fffe);
+  color: #fff;
+}
+
+/* schedule styling  */
+.schedule {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 800px;
+  height: 550px;
+  width: 100%;
+  background: linear-gradient(135deg, #e6c171, #59b69a);
+  padding: 25px 30px;
+  border-radius: 5px;
+  z-index: 10;
+}
+
+
+.schedule-form-title {
+  font-size: 25px;
+  font-weight: 500;
+  position: relative;
+}
+
+.schedule-form-title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 60px;
+  background: linear-gradient(135deg, rgb(32, 97, 218), rgb(145, 160, 156));
+}
+
+.principal {
+  height: 250px;
+  width: 250px;
+  margin-top: 80px;
+  margin-left: 70px;
+  margin-bottom: 10px;
+}
+
+#principal-name {
+  color: #fff;
+  font-size: 17px;
+  font-weight: bolder;
+  position: relative;
+  left: 140px;
+}
+
+#designation {
+  color: #fff;
+  position: relative;
+  left: 60px;
+  top: -20px;
+}
+
+.principal-speech {
+  color: rgb(45, 163, 45);
+  position: absolute;
+  left: 350px;
+  top: 130px;
+  font-size: 23px;
+  font-family: "roboto";
+  letter-spacing: 1px;
+}
+
+#para {
+  color: rgb(253, 255, 255);
+  font-family:'sans-serif';
+  font-size:10px;
+}
+
+/* about styling */
+.about{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  background: linear-gradient(135deg, #d3dde4, #59b6b1);
+  padding: 3rem;
+  border-radius: 5px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+.close-about,.close-th,.close-sch,.close-schedule-form,.close-faculty-form,.close-enrollment-form,.close-st,.close-con {
+  position: absolute;
+  top: 0.6rem;
+  right: 2rem;
+  font-size: 3rem;
+  color: rgb(224, 17, 17);
+  cursor: pointer;
+  border: none;
+  outline:none;
+  background: none;
+}
+
+.th-table-div{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  background: linear-gradient(135deg, #d3dde4, #59b6b1);
+  padding: 3rem;
+  border-radius: 5px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+#th-heading,
+#sch-heading,
+#st-heading{
+  position: absolute;
+  top:20px;
+}
+
+#th-heading::before,
+#sch-heading::before,
+#st-heading::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 60px;
+  background: linear-gradient(135deg, rgb(248, 78, 78), rgb(29, 240, 194));
+}
+
+.sch-table-div,
+.st-table-div{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  height:30%;
+  background: linear-gradient(135deg, #d3dde4, #59b6b1);
+  padding: 3rem;
+  border-radius: 5px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+.th-table-div{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  height:40%;
+  background: linear-gradient(135deg, #d3dde4, #59b6b1);
+  padding: 3rem;
+  border-radius: 5px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+.schedule-details .input-box #monday,#tuesday,#wednesday,#thursday,#friday{
+outline:none;
+left:20px;
+}
+
+.schedule-details .input-box #monday,#tuesday,#wednesday,#thursday,#friday{
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+/* excellence */
+.exc-heading{
+  position:absolute;
+  left:55%;
+  top:40%;
+  color:rgb(255, 255, 255);
+  font-size:50px;
+  font-family:'Brush Script MT';
+}
+
+#img-damodar{
+  height:20%;
+  width:13%;
+  top:50%;
+  left:50%;
+  position:absolute;
+  border-radius:5px;
+}
+
+#img-anup{
+  position:absolute;
+  height:20%;
+  width:13%;
+  top: 50%;
+  left:65%;
+  border-radius:5px;
+}
+
+#img-swati{
+  position:absolute;
+  height:20%;
+  width:13%;
+  top: 50%;
+  left:80%;
+  border-radius:5px;
+}
+
+#img-alka{
+  position:absolute;
+  height:20%;
+  width:13%;
+  top:75%;
+  left:58%;
+  border-radius:5px;
+}
+
+#img-vishwa{
+  position:absolute;
+  height:20%;
+  width:13%;
+  top:75%;
+  left:73%;
+  border-radius:5px;
+}
+
+ input[type=text], select, textarea {
+  width: 100%; 
+  padding: 6px;
+  border: 1px solid rgb(255, 254, 254); 
+  border-radius: 4px; 
+  box-sizing: border-box; 
+  margin-top: 2px; 
+  margin-bottom: 4px;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+ .contact{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 35%;
+  background: linear-gradient(135deg, #d3dde4, #59b6b1);
+  padding: 2rem;
+  border-radius: 5px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  z-index: 10;
+} 
+
+#excell-note{
+  position:absolute;
+  color:white;
+  font-size:17px;
+  left:05%;
+  top:65%;
+}
